@@ -300,3 +300,32 @@ Instrukcja przedstawia przykładowe wykorzystanie Java Message Service
     - Co stanie się po dodaniu kolejnego obiektu klasy `Publisher` z parametrem `topicName="bsr.topic"` i wysłaniu `sendName("Pippi","Langstrump")`?
 
     - Sprawdź to zmieniając implementacja `main` w klasie `SubscriberExample`
+    
+## Wykorzystanie obiketu `ObjectMessage`
+
+1. Dodaj nową klasę `Person`:    
+    ````````````
+    public class Person {
+        private String name;
+        private String surname;
+    
+        public Person(String name, String surname) {
+            this.name = name;
+            this.surname = surname;
+        }
+    
+        public String getName() {
+            return name;
+        }
+    
+        public String getSurname() {
+            return surname;
+        }
+    }
+
+    ````````````
+    
+2. Zmień aktualną implementacje klas `Publisher` i `Subscriber`, aby przesyłały wiadomości z wykorzystaniem `ObjectMessage` zamiast `TextMessage`
+    - Popraw metodę ` sendName(String firstName, String lastName)` w klasie `Publisher`
+    
+    - To samo zrób dla metody `getGreeting` w klasie `Subscriber`
